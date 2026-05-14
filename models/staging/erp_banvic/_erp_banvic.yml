@@ -6,14 +6,38 @@ sources:
     tables:
       - name: localidades
         description: Tabela fonte de localidades com informação de cidade e estado.
+        columns:
+          - name: cod_localidade
+            description: Chave primária da tabela localidades.
+            tests:
+              - unique
+              - not_null
+              
       - name: clientes
         description: Tabela fonte de clientes com informações pessoais de cada cliente Banvic.
+        columns:
+          - name: cod_cliente
+            description: Chave primária da tabela clientes.
+            tests:
+              - unique
+              - not_null
       - name: colaboradores
         description: Tabela fonte de colaboradores com informações pessoais de cada colaborador Banvic.
+        columns:
+          - name: cod_colaborador
+            description: Chave primaria de código colaborador.
+            tests:
+              - unique
+              - not_null
+
       - name: agencias
         description: Tabela fonte de agencias do Banvic. 
+        columns:
+          - name: cod_agencia
+            description: Chave primária da tabela agencias.
+            tests:
+              - unique
+              - not_null
+
       - name: colaborador_agencia
-        description: Agencia associada a codigo de colaborador.
-
-
-
+        description: Número de agência ppor colaborador.

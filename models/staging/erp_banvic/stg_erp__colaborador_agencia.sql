@@ -1,16 +1,13 @@
-
 with
-    fonte_localidades as (
+    fonte_colaborador_agencia as (
         select *
-        from {{ source('erp', 'localidades') }}
+        from {{ source('erp', 'colaborador_agencia') }}
     )
     , renomeado as (
         select
-            cod_localidade as pk_localidade
-            , cast(cidade as string) as cidade
-            , cast(uf as string) as uf
-        from fonte_localidades
+            cast(cod_colaborador as int) as pk_cod_colaborador
+            , cast(cod_agencia as int) as cod_agencia_colaborador
+        from fonte_colaborador_agencia
     )
-select * 
-from renomeado
-
+    
+select * from renomeado
