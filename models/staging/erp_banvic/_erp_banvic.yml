@@ -40,4 +40,10 @@ sources:
               - not_null
 
       - name: colaborador_agencia
-        description: Número de agência ppor colaborador.
+        description: Número de agência por colaborador.
+        data_tests:
+        - dbt_utils.unique_combination_of_columns:
+            arguments:
+              combination_of_columns:
+                - cod_colaborador
+                - cod_agencia
