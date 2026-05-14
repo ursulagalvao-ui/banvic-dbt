@@ -1,0 +1,21 @@
+models:
+  - name: dim_agencias
+    description: Modelo dimensão de agencias.
+    columns:
+    - name: pk_agencia
+      description: Chave primaria de tabela agência.
+    - name: nome_agencia
+      description: Nome da agência.
+    - name: endereco_agencia
+      description: Endereço da agência.
+    - name: cidade_agencia
+      description: Cidade da agência.
+    - name: uf_agencia
+      description: Código UF do Estado da agência.
+    - name: data_de_abertura
+      description: Data de abertura da agência.
+    - name: tipo_agencia_fd
+      description: "Definição do tipo de agência (física ou digital)"
+      
+      
+          
