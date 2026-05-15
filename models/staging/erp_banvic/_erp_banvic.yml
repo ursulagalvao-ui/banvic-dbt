@@ -9,7 +9,7 @@ sources:
         columns:
           - name: cod_localidade
             description: Chave primária da tabela localidades.
-            tests:
+            data_tests:
               - unique
               - not_null
               
@@ -18,7 +18,7 @@ sources:
         columns:
           - name: cod_cliente
             description: Chave primária da tabela clientes.
-            tests:
+            data_tests:
               - unique
               - not_null
       - name: colaboradores
@@ -26,7 +26,7 @@ sources:
         columns:
           - name: cod_colaborador
             description: Chave primaria de código colaborador.
-            tests:
+            data_tests:
               - unique
               - not_null
 
@@ -35,7 +35,7 @@ sources:
         columns:
           - name: cod_agencia
             description: Chave primária da tabela agencias.
-            tests:
+            data_tests:
               - unique
               - not_null
 
@@ -47,3 +47,25 @@ sources:
               combination_of_columns:
                 - cod_colaborador
                 - cod_agencia
+      
+      - name: contas
+        description: Tabela que registra as informações bancárias de cada cliente, incluindo número de conta, agência, saldo, tipo de conta e data de abertura.
+        columns:
+          - name: num_conta
+            data_tests:
+            - unique
+            - not_null
+      - name: propostas_credito
+        description: Armazena propostas de crédito feitas aos clientes, incluindo dados como taxa de juros, valor de proposta, valor financiado, parcerias.
+        columns: 
+          - name: cod_proposta
+            data_tests:
+            - unique 
+            - not_null 
+      - name: transacoes
+        description: Registra transacoes feitas nas contas de clientes, incluidno valor, tipo de transacao e data da transacao.
+        columns: 
+        - name: cod_transacao
+          data_tests:
+          - unique 
+          - not_null
